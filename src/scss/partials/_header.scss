@@ -4,6 +4,8 @@
     align-items: center;
     padding: 15px;
     background: palette(2);
+    box-shadow: 2px 4px 5px rgba(palette(4), .5);
+    z-index: 1;
     img {
         width: 40px;
     }
