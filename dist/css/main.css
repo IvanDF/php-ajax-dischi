@@ -6154,22 +6154,51 @@ body {
 }
 
 .song-item {
+  position: relative;
   width: calc((100% / 3) - 60px );
   margin: 30px;
   color: #fff;
   background: rgba(24, 36, 48, 0.2);
   padding: 20px;
   border-radius: 20px;
+  overflow: hidden;
   box-shadow: 5px 10px 10px -2px rgba(0, 0, 0, 0.5);
   transition: box-shadow 350ms cubic-bezier(0.19, 1, 0.22, 1), transform 200ms cubic-bezier(0, 1.43, 0.93, 1.76);
 }
 .song-item:hover {
   box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.8);
-  transform: rotate(5deg);
+  transform: rotate(3deg);
+}
+.song-item:hover .filter {
+  background: rgba(0, 0, 0, 0.5);
+}
+.song-item:hover .filter i {
+  opacity: 1;
 }
 .song-item img {
   padding: 0 20px;
 }
 .song-item h3, .song-item small {
   margin: 15px 0;
+}
+.song-item .filter {
+  background: rgba(0, 0, 0, 0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  transition: background 350ms ease-in-out;
+}
+.song-item .filter i {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  font-size: 48px;
+  cursor: pointer;
+  transition: opacity 350ms ease-in-out, transform 200ms cubic-bezier(0, 1.43, 0.93, 1.76);
 }

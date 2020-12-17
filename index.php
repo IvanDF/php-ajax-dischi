@@ -29,6 +29,9 @@
                             <small> <?php echo $song['author'] ?> </small>
                             <h3> <?php echo $song['year'] ?> </h3>
                             <small> <?php echo $song['genre'] ?> </small>
+                            <div class="filter">
+                                <i class="fas fa-play"></i>
+                            </div>
                         </li>
                     <?php endforeach ?>
                 </ul>
