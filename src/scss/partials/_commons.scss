@@ -1,0 +1,37 @@
+// RESET
+*::after,
+*::before,
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// GENERAL SETTINGS
+body {
+    font-family: sans-serif;
+    height: 100vh;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+// CONTAINER
+.container {
+    width: 1120px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+// IMAGES
+.img-resp {
+    width: 100%;
+}
+
+// TEXTS
+.txt-center {
+    text-align: center;
+}

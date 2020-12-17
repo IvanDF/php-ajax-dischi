@@ -1,0 +1,6 @@
+// COLORS 
+$palette: #fff, #182430, #1e2d3c, #000;
+
+@function palette($col) {
+    @return nth( $palette, $col)
+};
