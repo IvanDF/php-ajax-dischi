@@ -10,24 +10,43 @@ const app = new Vue({
     data: {
 
         cds: [],
+        authors: [],
 
         searchArtist: 'all',
+        url: window.location.href + 'scripts/database.php',
 
     },
 
     created() {
 
-        const url = window.location.href + 'scripts/database.php';
 
-        axios.get(url)
+        axios.get(this.url)
             .then( response => {
                 // handle success
                 this.cds = response.data;
+                this.authors = response.data;
             })
             .catch( error => {
                 // handle error
                 console.log(error);
             })
     },
+    methods: {
+        filter(){
+            axios.get(this.url, {
+                params: {
+                    author: this.searchArtist,
+                }
+                })
+                .then( response => {
+                    // handle success;
+                    this.cds = response.data;
+                })
+                .catch( error => {
+                    // handle error
+                    console.log(error);
+                });
+        }
+    }
 
 });
