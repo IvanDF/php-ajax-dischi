@@ -14422,20 +14422,18 @@ __webpack_require__.r(__webpack_exports__);
  // IMPORT AXIOS
 
 
-console.log('ciao');
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   data: {
-    cds: []
+    cds: [],
+    searchArtist: 'all'
   },
   created: function created() {
     var _this = this;
 
     var url = window.location.href + 'scripts/database.php';
-    console.log('ciao Vue');
     axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(url).then(function (response) {
       // handle success
-      console.log(response.data);
       _this.cds = response.data;
     })["catch"](function (error) {
       // handle error

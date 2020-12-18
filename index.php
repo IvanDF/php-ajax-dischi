@@ -18,7 +18,17 @@
         <div class="container">
             <div class="songs">
                 <ul class="song-list">
-                    <li v-for=" (cd, i) in cds" class="song-item txt-center">
+                    <li v-for=" (cd, i) in cds" class="song-item txt-center" v-if="searchArtist === 'all'">
+                        <img class="img-resp" :src="cd.poster" :alt="cd.title">
+                        <h3> {{cd.title}} </h3>
+                        <small> {{cd.author}} </small>
+                        <h3> {{cd.year}} </h3>
+                        <small> {{cd.genre}} </small>
+                        <div class="filter">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </li>
+                    <li v-for=" (cd, i) in cds" class="song-item txt-center" v-if="cd.author === searchArtist">
                         <img class="img-resp" :src="cd.poster" :alt="cd.title">
                         <h3> {{cd.title}} </h3>
                         <small> {{cd.author}} </small>

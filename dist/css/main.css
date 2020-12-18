@@ -6139,6 +6139,12 @@ body {
   width: 40px;
 }
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .main-section {
   flex-grow: 1;
   background: #1e2d3c;
