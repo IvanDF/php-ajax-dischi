@@ -9,31 +9,25 @@
 </head>
 <body>
 
-    <?php // Item from database
-        include __DIR__ . '/partials/database.php' 
-    ?>
 <div id="app">
-    <header class="main-header">
-        <div class="container">
-            <img src="./img/logo.png" alt="Spotify">
-        </div>
-    </header>
+    <!-- HEADER -->
+    <?php // IMPORT HEADER
+        require __DIR__ . '/partials/templates/header.php';
+    ?>
     <main class="main-section">
         <div class="container">
             <div class="songs">
                 <ul class="song-list">
-                    <?php foreach( $database as $song ) : ?>
-                        <li class="song-item txt-center">
-                            <img class="img-resp" src="<?php echo $song['poster'] ?>" alt="<?php echo $song['title'] ?>">
-                            <h3> <?php echo $song['title'] ?> </h3>
-                            <small> <?php echo $song['author'] ?> </small>
-                            <h3> <?php echo $song['year'] ?> </h3>
-                            <small> <?php echo $song['genre'] ?> </small>
-                            <div class="filter">
-                                <i class="fas fa-play"></i>
-                            </div>
-                        </li>
-                    <?php endforeach ?>
+                    <li v-for=" (cd, i) in cds" class="song-item txt-center">
+                        <img class="img-resp" :src="cd.poster" :alt="cd.title">
+                        <h3> {{cd.title}} </h3>
+                        <small> {{cd.author}} </small>
+                        <h3> {{cd.year}} </h3>
+                        <small> {{cd.genre}} </small>
+                        <div class="filter">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
